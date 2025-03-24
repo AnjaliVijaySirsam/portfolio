@@ -1,22 +1,33 @@
+/* Default Light Theme */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --card-bg: #fff;
+    --btn-bg: #007BFF;
+    --btn-hover: #0056b3;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--bg-color);
     margin: 0;
     padding: 0;
     text-align: center;
+    transition: background 0.3s, color 0.3s;
 }
 
 .container {
     width: 80%;
     margin: 20px auto;
     padding: 20px;
-    background: white;
+    background: var(--card-bg);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    transition: background 0.3s;
 }
 
 h1 {
-    color: #333;
+    color: var(--text-color);
 }
 
 .projects {
@@ -27,33 +38,65 @@ h1 {
 }
 
 .project {
-    background: #fff;
+    background: var(--card-bg);
     padding: 15px;
     width: 300px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover {
+    transform: translateY(-5px);
 }
 
 .project h2 {
     margin: 10px 0;
-    color: #007BFF;
+    color: var(--btn-bg);
 }
 
 .project p {
     font-size: 14px;
-    color: #555;
+    color: var(--text-color);
 }
 
 .project a {
     display: inline-block;
     margin: 10px 5px;
     padding: 8px 12px;
-    background: #007BFF;
+    background: var(--btn-bg);
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    transition: background 0.3s;
 }
 
 .project a:hover {
-    background: #0056b3;
+    background: var(--btn-hover);
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    --bg-color: #222;
+    --text-color: #f4f4f4;
+    --card-bg: #333;
+    --btn-bg: #0d6efd;
+    --btn-hover: #0948a6;
+}
+
+/* Dark Mode Button */
+#theme-toggle {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: none;
+    background: var(--btn-bg);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#theme-toggle:hover {
+    background: var(--btn-hover);
 }
